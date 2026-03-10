@@ -14,8 +14,9 @@ int main(void)
   {
     Bureaucrat b("r1", 150);
     std::cout << b << std::endl;
-    std::cout << --b << std::endl;
     std::cout << ++b << std::endl;
+    std::cout << --b << std::endl;
+    std::cout << --b << std::endl;
     std::cout << --b << std::endl;
   }
   catch (std::exception &e)

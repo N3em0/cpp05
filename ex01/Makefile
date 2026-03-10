@@ -1,4 +1,4 @@
-NAME	:= Bureaucrat
+NAME	:= Form
 
 SRC_DIR := src
 BUILD_DIR	:=	.build
@@ -6,7 +6,8 @@ INC_DIR := includes
 
 SRC_FILES		:=	\
 main.cpp \
-Bureaucrat.cpp
+Bureaucrat.cpp \
+Form.cpp
 
 SRC		:=	$(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ			:=	$(SRC:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
