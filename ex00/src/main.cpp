@@ -8,7 +8,7 @@ int main(void)
   }
   catch (std::exception &e)
   {
-    std::cout << "wtf 1" << std::endl;
+    std::cout << e.what() << std::endl;
   }
   try
   {
@@ -21,7 +21,7 @@ int main(void)
   }
   catch (std::exception &e)
   {
-    std::cout << "wtf 2" << std::endl;
+    std::cout << e.what() << std::endl;
   }
   try
   {
@@ -29,7 +29,7 @@ int main(void)
   }
   catch (std::exception &e)
   {
-    std::cout << "wtf 3" << std::endl;
+    std::cout << e.what() << std::endl;
   }
   try
   {
@@ -37,24 +37,7 @@ int main(void)
   }
   catch (std::exception &e)
   {
-    std::cout << "wtf 4" << std::endl;
+    std::cout << e.what() << std::endl;
   }
   return 0;
 }
-
-// int main()
-//{
-//  try
-//  {
-//    Bureaucrat a;
-//    Bureaucrat b("r1", 100);
-//    Bureaucrat c("r2", 151);
-//    Bureaucrat d("r3", 0);
-//
-//  }
-//  catch (std::exception &e)
-//  {
-//    std::cout << "wtf 1" << std::endl;
-//  }
-//  return 0;
-//  }
