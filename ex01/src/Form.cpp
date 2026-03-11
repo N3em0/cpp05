@@ -12,7 +12,7 @@ Form::Form(const Form &src)
 }
 
 Form::Form(std::string name, size_t signGrade, size_t exeGrade)
-    try : _name(name), _signed(false), _signGrade(signGrade), _exeGrade(exeGrade)
+try : _name(name), _signed(false), _signGrade(signGrade), _exeGrade(exeGrade)
 {
   if (this->_signGrade > 150 || this->_exeGrade > 150)
     throw Form::GradeTooLowException();
@@ -43,48 +43,28 @@ Form &Form::operator=(const Form &rhs)
   return (*this);
 }
 
-std::string const &Form::getName() const
-{
-  return (this->_name);
-}
+std::string const &Form::getName() const { return (this->_name); }
 
-size_t const &Form::getSignGrade() const
-{
-  return (this->_signGrade);
-}
+size_t const &Form::getSignGrade() const { return (this->_signGrade); }
 
-size_t const &Form::getExeGrade() const
-{
-  return (this->_exeGrade);
-}
+size_t const &Form::getExeGrade() const { return (this->_exeGrade); }
 
-bool const &Form::getSignedState() const
-{
-  return (this->_signed);
-}
+bool const &Form::getSignedState() const { return (this->_signed); }
 
-bool Form::beSigned(Bureaucrat &b)
+void Form::beSigned(Bureaucrat &b)
 {
-  try
-  {
-    if (b.getGrade() <= this->_signGrade)
-    {
-      this->_signed = true;
-      return (true);
-    }
-    else
-      throw Form::GradeTooLowException();
-  }
-  catch (Form::GradeTooLowException &e)
-  {
-    std::cout << e.what();
-  }
-  return (false);
+  if (b.getGrade() <= this->_signGrade)
+    this->_signed = true;
+  else
+    throw Form::GradeTooLowException();
+  return;
 }
 
 std::ostream &operator<<(std::ostream &o, Form const &rhs)
 {
-  o << rhs.getName() << ", grade needed to sign the form : " << rhs.getSignGrade() << ", grade needed to execute the form : " << rhs.getExeGrade() << ". ";
+  o << rhs.getName()
+    << ", grade needed to sign the form : " << rhs.getSignGrade()
+    << ", grade needed to execute the form : " << rhs.getExeGrade() << ". ";
   if (rhs.getSignedState() == true)
     o << "The form is already signed." << std::endl;
   else

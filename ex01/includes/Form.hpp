@@ -26,7 +26,7 @@ public:
   size_t const &getExeGrade(void) const;
   bool const &getSignedState(void) const;
 
-  bool beSigned(Bureaucrat &b);
+  void beSigned(Bureaucrat &b);
 
   class GradeTooHighException : public std::exception
   {
