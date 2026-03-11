@@ -18,7 +18,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-  static int success = 0;
+  static size_t success = 0;
   AForm::execute(executor);
   std::cout << "--- VRRRRRrrrrRRRrrRrrRRRRRRRR ---" << std::endl;
   if (success % 2 == 0)
