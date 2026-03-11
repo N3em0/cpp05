@@ -12,24 +12,12 @@ Form::Form(const Form &src)
 }
 
 Form::Form(std::string name, size_t signGrade, size_t exeGrade)
-try : _name(name), _signed(false), _signGrade(signGrade), _exeGrade(exeGrade)
+    : _name(name), _signed(false), _signGrade(signGrade), _exeGrade(exeGrade)
 {
   if (this->_signGrade > 150 || this->_exeGrade > 150)
     throw Form::GradeTooLowException();
   else if (this->_signGrade < 1 || this->_exeGrade < 1)
     throw Form::GradeTooHighException();
-  else
-    std::cout << "Form is good" << std::endl;
-}
-catch (Form::GradeTooLowException &e)
-{
-  std::cout << e.what();
-  // throw;
-}
-catch (Form::GradeTooHighException &e)
-{
-  std::cout << e.what();
-  // throw;
 }
 
 Form::~Form() {}
@@ -37,9 +25,7 @@ Form::~Form() {}
 Form &Form::operator=(const Form &rhs)
 {
   if (this != &rhs)
-  {
     this->_signed = rhs._signed;
-  }
   return (*this);
 }
 
