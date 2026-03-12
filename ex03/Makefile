@@ -1,4 +1,4 @@
-NAME	:= ex02 
+NAME	:= Intern 
 
 SRC_DIR := src
 BUILD_DIR	:=	.build
@@ -10,7 +10,8 @@ Bureaucrat.cpp \
 AForm.cpp \
 ShrubberyCreationForm.cpp \
 RobotomyRequestForm.cpp \
-PresidentialPardonForm.cpp
+PresidentialPardonForm.cpp \
+Intern.cpp
 
 SRC		:=	$(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ			:=	$(SRC:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
