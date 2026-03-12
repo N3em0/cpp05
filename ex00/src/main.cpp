@@ -10,6 +10,8 @@ int main(void)
   {
     std::cout << e.what() << std::endl;
   }
+  std::cout << "\n====================================================\n"
+            << std::endl;
   try
   {
     Bureaucrat b("r1", 150);
@@ -23,6 +25,8 @@ int main(void)
   {
     std::cout << e.what() << std::endl;
   }
+  std::cout << "\n====================================================\n"
+            << std::endl;
   try
   {
     Bureaucrat c("r2", 151);
@@ -31,6 +35,8 @@ int main(void)
   {
     std::cout << e.what() << std::endl;
   }
+  std::cout << "\n====================================================\n"
+            << std::endl;
   try
   {
     Bureaucrat d("r3", 0);

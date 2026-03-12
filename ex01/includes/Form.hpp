@@ -32,14 +32,14 @@ public:
   {
   public:
     GradeTooHighException();
-    virtual const char *what() const throw() { return ("Grade is too high\n"); }
+    virtual const char *what() const throw() { return ("Grade is too high"); }
   };
 
   class GradeTooLowException : public std::exception
   {
   public:
     GradeTooLowException();
-    virtual const char *what() const throw() { return ("Grade is too low\n"); }
+    virtual const char *what() const throw() { return ("Grade is too low"); }
   };
 };
 

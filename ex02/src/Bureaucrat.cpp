@@ -2,10 +2,7 @@
 #include "AForm.hpp"
 #include <exception>
 
-Bureaucrat::Bureaucrat() : _name("John"), _grade(150)
-{
-  std::cout << "coucou a tous\n";
-}
+Bureaucrat::Bureaucrat() : _name("John"), _grade(150) {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src)
     : _name(src._name), _grade(src._grade)
@@ -75,8 +72,8 @@ void Bureaucrat::executeForm(AForm const &form) const
   }
   catch (std::exception &e)
   {
-    std::cout << this->_name << " couldn't execute " << form.getName() << " because "
-    << e.what() << std::endl;
+    std::cout << this->_name << " couldn't execute " << form.getName()
+              << " because " << e.what() << std::endl;
   }
 }
 

@@ -1,8 +1,7 @@
-#include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
@@ -12,37 +11,51 @@ int main(void)
     ShrubberyCreationForm fa("janette");
     RobotomyRequestForm fb("jean");
     PresidentialPardonForm fc("jacques");
-    b.executeForm(fa);
     b.signForm(fa);
-    b.signForm(fb);
-    b.signForm(fc);
     b.executeForm(fa);
+    std::cout << "\n====================================================\n"
+              << std::endl;
+    b.signForm(fb);
     b.executeForm(fb);
+    std::cout << "\n====================================================\n"
+              << std::endl;
+    b.signForm(fc);
     b.executeForm(fc);
   }
   catch (std::exception &e)
   {
   }
-  std::cout << "====================================================" << std::endl;
-  // try
-  // {
-  //   Bureaucrat c("r2", 150);
-  //   Form fc("b", 151, 151);
-  // }
-  // catch (std::exception &e)
-  // {
-  //   std::cout << "Error Form Grade too low" << std::endl;
-  // }
-  // std::cout << "====================================================" << std::endl;
-  // try
-  // {
-  //   Bureaucrat c("r2", 150);
-  //   Form fd("b", 0, 0);
-  // }
-  // catch (std::exception &e)
-  // {
-  //   std::cout << "Error Form Grade too high" << std::endl;
-  // }
-  // std::cout << "====================================================" << std::endl;
+  std::cout << "\n====================================================\n"
+            << std::endl;
+  try
+  {
+    Bureaucrat ba("r1", 137);
+    ShrubberyCreationForm fa("target");
+    ba.signForm(fa);
+    ba.executeForm(fa);
+    std::cout << "----------------------------------------------------"
+              << std::endl;
+    Bureaucrat bb("r2", 145);
+    ShrubberyCreationForm fb("target");
+    bb.signForm(fb);
+    bb.executeForm(fb);
+  }
+  catch (std::exception &e)
+  {
+  }
+  std::cout << "\n====================================================\n"
+            << std::endl;
+  try
+  {
+    Bureaucrat ba("r1", 150);
+    PresidentialPardonForm fa("President");
+    ba.signForm(fa);
+    ba.executeForm(fa);
+  }
+  catch (std::exception &e)
+  {
+  }
+  std::cout << "\n====================================================\n"
+            << std::endl;
   return 0;
 }

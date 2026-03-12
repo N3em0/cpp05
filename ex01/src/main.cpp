@@ -1,5 +1,5 @@
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
@@ -10,16 +10,17 @@ int main(void)
     Form fb("b", 149, 149);
     std::cout << b << fa << fb << std::endl;
     b.signForm(fa);
-    std::cout << b << fa << fb << std::endl;
     b.signForm(fb);
     ++b;
     b.signForm(fb);
+    std::cout << b << fa << fb << std::endl;
   }
   catch (std::exception &e)
   {
-    std::cout << "Error no error (i hope so)" << std::endl;
+    std::cout << e.what() << std::endl;
   }
-  std::cout << "====================================================" << std::endl;
+  std::cout << "===================================================="
+            << std::endl;
   try
   {
     Bureaucrat c("r2", 150);
@@ -27,9 +28,10 @@ int main(void)
   }
   catch (std::exception &e)
   {
-    std::cout << "Error Form Grade too low" << std::endl;
+    std::cout << "Form " << e.what() << std::endl;
   }
-  std::cout << "====================================================" << std::endl;
+  std::cout << "===================================================="
+            << std::endl;
   try
   {
     Bureaucrat c("r2", 150);
@@ -37,25 +39,9 @@ int main(void)
   }
   catch (std::exception &e)
   {
-    std::cout << "Error Form Grade too high" << std::endl;
+    std::cout << "Form " << e.what() << std::endl;
   }
-  std::cout << "====================================================" << std::endl;
+  std::cout << "===================================================="
+            << std::endl;
   return 0;
 }
-
-// int main()
-//{
-//  try
-//  {
-//    Bureaucrat a;
-//    Bureaucrat b("r1", 100);
-//    Bureaucrat c("r2", 151);
-//    Bureaucrat d("r3", 0);
-//
-//  }
-//  catch (std::exception &e)
-//  {
-//    std::cout << "wtf 1" << std::endl;
-//  }
-//  return 0;
-//  }

@@ -1,8 +1,11 @@
 #include "Intern.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 Intern::Intern() {}
 
-Intern::Intern(Intern const &src) {}
+Intern::Intern(Intern const &src) { (void)src; }
 
 Intern::~Intern() {}
 
@@ -24,36 +27,21 @@ AForm *makePresident(std::string target)
   return (form);
 }
 
-AForm *Intern::makeForm(std::string target)
+AForm *Intern::makeForm(std::string name, std::string target)
 {
-  std::string levels[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-  AForm *(Intern::*ft_ptrFunctions[3])(std::string target) = { &makeShrubbery, &makeRobotomy, &makePresident};
+  std::string names[3] = {"shrubbery creation", "robotomy request",
+                          "presidential pardon"};
+  AForm *(*ft_ptrFunctions[3])(std::string target) = {
+      &makeShrubbery, &makeRobotomy, &makePresident};
 
   for (size_t i = 0; i < 3; i++)
   {
-    if (levels[i] == level)
+    if (names[i] == name)
     {
-       std::cout << "Intern creates " << levels[i];
-      return ((this->*ft_ptrFunctions[i])(target));
+      std::cout << "Intern creates " << names[i] << " form" << std::endl;
+      return ((*ft_ptrFunctions[i])(target));
     }
-    std::cout << "Error form name doesn't exists" << std::endl;
   }
-  // switch (name) {
-  // case 1:
-  //     AForm *form = new ShrubberyCreationForm();
-  //     return (form);
-  //     break;
-  // case 2:
-  //     AForm *form = new RobotomyRequestForm();
-  //     return (form);
-  //     break;
-  // case 3:
-  //     AForm *form = new PresidentialPardonForm();
-  //     return (form);
-  //     break;
-  // default:
-  //     std::cout << "This form type doesn't exists" << std::endl;
-  //     break;
-  // }
+  std::cout << "Warning, form name doesn't exists" << std::endl;
+  return (0);
 }
-
