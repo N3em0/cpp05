@@ -2,14 +2,6 @@
 
 int main(void)
 {
-  try
-  {
-    Bureaucrat a;
-  }
-  catch (std::exception &e)
-  {
-    std::cout << e.what() << std::endl;
-  }
   std::cout << "\n====================================================\n"
             << std::endl;
   try
