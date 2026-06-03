@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include <iostream>
 
 Form::Form()
     : _name("GenericForm"), _signed(false), _signGrade(150), _exeGrade(150)
@@ -11,7 +12,7 @@ Form::Form(const Form &src)
 {
 }
 
-Form::Form(std::string name, size_t signGrade, size_t exeGrade)
+Form::Form(std::string name, int signGrade, int exeGrade)
     : _name(name), _signed(false), _signGrade(signGrade), _exeGrade(exeGrade)
 {
   if (this->_signGrade > 150 || this->_exeGrade > 150)
@@ -31,9 +32,9 @@ Form &Form::operator=(const Form &rhs)
 
 std::string const &Form::getName() const { return (this->_name); }
 
-size_t const &Form::getSignGrade() const { return (this->_signGrade); }
+int const &Form::getSignGrade() const { return (this->_signGrade); }
 
-size_t const &Form::getExeGrade() const { return (this->_exeGrade); }
+int const &Form::getExeGrade() const { return (this->_exeGrade); }
 
 bool const &Form::getSignedState() const { return (this->_signed); }
 

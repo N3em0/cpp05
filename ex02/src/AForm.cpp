@@ -11,7 +11,7 @@ AForm::AForm(const AForm &src)
 {
 }
 
-AForm::AForm(std::string name, size_t signGrade, size_t exeGrade)
+AForm::AForm(std::string name, int signGrade, int exeGrade)
     : _name(name), _signed(false), _signGrade(signGrade), _exeGrade(exeGrade)
 {
   if (this->_signGrade > 150 || this->_exeGrade > 150)
@@ -31,9 +31,9 @@ AForm &AForm::operator=(const AForm &rhs)
 
 std::string const &AForm::getName() const { return (this->_name); }
 
-size_t const &AForm::getSignGrade() const { return (this->_signGrade); }
+int const &AForm::getSignGrade() const { return (this->_signGrade); }
 
-size_t const &AForm::getExeGrade() const { return (this->_exeGrade); }
+int const &AForm::getExeGrade() const { return (this->_exeGrade); }
 
 bool const &AForm::getSignedState() const { return (this->_signed); }
 

@@ -2,12 +2,19 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include <stdexcept>
 
 Intern::Intern() {}
 
 Intern::Intern(Intern const &src) { (void)src; }
 
 Intern::~Intern() {}
+
+Intern &Intern::operator=(Intern const &rhs)
+{
+  (void)rhs;
+  return (*this);
+}
 
 AForm *makeShrubbery(std::string target)
 {
@@ -42,6 +49,6 @@ AForm *Intern::makeForm(std::string name, std::string target)
       return ((*ft_ptrFunctions[i])(target));
     }
   }
-  std::cout << "Warning, form name doesn't exists" << std::endl;
+  throw std::invalid_argument("Warning: " + name + " is an invalid name");
   return (0);
 }
