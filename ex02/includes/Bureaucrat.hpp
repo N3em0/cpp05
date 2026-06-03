@@ -10,11 +10,11 @@ class Bureaucrat
 {
 private:
   const std::string _name;
-  size_t _grade;
+  int _grade;
 
 public:
   Bureaucrat();
-  Bureaucrat(std::string name, size_t grade);
+  Bureaucrat(std::string name, int grade);
   Bureaucrat(const Bureaucrat &src);
   ~Bureaucrat();
 
@@ -23,7 +23,7 @@ public:
   Bureaucrat &operator--();
 
   std::string const &getName(void) const;
-  size_t const &getGrade(void) const;
+  int const &getGrade(void) const;
 
   void signForm(AForm &f);
   void executeForm(AForm const &form) const;

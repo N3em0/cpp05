@@ -46,6 +46,7 @@ clean:
 
 fclean:	clean
 			$(RM) $(NAME)
+			@rm -f Jack_shrubbery
 
 re:
 			$(MAKE) fclean

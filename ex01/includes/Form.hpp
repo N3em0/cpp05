@@ -3,27 +3,26 @@
 
 #include "Bureaucrat.hpp"
 #include <exception>
-#include <iostream>
 
 class Form
 {
 private:
   const std::string _name;
   bool _signed;
-  const size_t _signGrade;
-  const size_t _exeGrade;
+  const int _signGrade;
+  const int _exeGrade;
 
 public:
   Form();
   Form(const Form &src);
-  Form(std::string name, size_t signGrade, size_t exeGrade);
+  Form(std::string name, int signGrade, int exeGrade);
   ~Form();
 
   Form &operator=(const Form &rhs);
 
   std::string const &getName(void) const;
-  size_t const &getSignGrade(void) const;
-  size_t const &getExeGrade(void) const;
+  int const &getSignGrade(void) const;
+  int const &getExeGrade(void) const;
   bool const &getSignedState(void) const;
 
   void beSigned(Bureaucrat &b);

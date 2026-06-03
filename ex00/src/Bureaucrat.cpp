@@ -7,8 +7,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src)
 {
 }
 
-Bureaucrat::Bureaucrat(std::string name, size_t grade)
-    : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
   if (this->_grade > 150)
     throw Bureaucrat::GradeTooLowException();
@@ -52,7 +51,7 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)
 
 std::string const &Bureaucrat::getName() const { return (this->_name); }
 
-size_t const &Bureaucrat::getGrade() const { return (this->_grade); }
+int const &Bureaucrat::getGrade() const { return (this->_grade); }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException() {}
 
