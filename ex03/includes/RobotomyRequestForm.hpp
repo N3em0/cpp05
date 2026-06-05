@@ -3,7 +3,6 @@
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include <iostream>
 
 class RobotomyRequestForm : public AForm
 {
@@ -16,9 +15,9 @@ public:
   RobotomyRequestForm(std::string target);
   ~RobotomyRequestForm();
 
-RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
+  RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
 
-void execute(Bureaucrat const &executor) const;
+  void execute(Bureaucrat const &executor) const;
 };
 
 #endif
