@@ -39,6 +39,8 @@ bool const &AForm::getSignedState() const { return (this->_signed); }
 
 void AForm::beSigned(Bureaucrat &b)
 {
+  if (this->_signed == true)
+    throw AForm::FormAlreadySignedException();
   if (b.getGrade() <= this->_signGrade)
     this->_signed = true;
   else
@@ -71,3 +73,5 @@ AForm::GradeTooHighException::GradeTooHighException() {}
 AForm::GradeTooLowException::GradeTooLowException() {}
 
 AForm::FormNotSignedException::FormNotSignedException() {}
+
+AForm::FormAlreadySignedException::FormAlreadySignedException() {}

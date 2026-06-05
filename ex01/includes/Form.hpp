@@ -40,6 +40,13 @@ public:
     GradeTooLowException();
     virtual const char *what() const throw() { return ("Grade is too low"); }
   };
+
+  class FormAlreadySignedException : public std::exception
+  {
+  public:
+    FormAlreadySignedException();
+    virtual const char *what() const throw() { return ("Form is already signed"); }
+  };
 };
 
 std::ostream &operator<<(std::ostream &o, Form const &rhs);

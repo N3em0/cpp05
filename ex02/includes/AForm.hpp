@@ -49,6 +49,13 @@ public:
     FormNotSignedException();
     virtual const char *what() const throw() { return ("Form isn't signed"); }
   };
+
+  class FormAlreadySignedException : public std::exception
+  {
+  public:
+    FormAlreadySignedException();
+    virtual const char *what() const throw() { return ("Form is already signed"); }
+  };
 };
 
 std::ostream &operator<<(std::ostream &o, AForm const &rhs);
