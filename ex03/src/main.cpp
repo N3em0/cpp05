@@ -30,13 +30,17 @@ int main(void)
     delete formB;
     formB = NULL;
     delete formC;
+    formC = NULL;
   }
   catch (std::exception &e)
   {
     std::cout << e.what() << std::endl;
     delete formA;
+    formA = NULL;
     delete formB;
+    formB = NULL;
     delete formC;
+    formC = NULL;
   }
   std::cout << "\n====================================================\n"
             << std::endl;
@@ -49,11 +53,13 @@ int main(void)
     b.signForm(*formD);
     b.executeForm(*formD);
     delete formD;
+    formD = NULL;
   }
   catch (std::exception &e)
   {
     std::cout << e.what() << std::endl;
     delete formD;
+    formD = NULL;
   }
   std::cout << "\n====================================================\n"
             << std::endl;
@@ -67,11 +73,13 @@ int main(void)
     c.signForm(*formE);
     c.executeForm(*formE);
     delete formE;
+    formE = NULL;
   }
   catch (std::exception &e)
   {
     std::cout << e.what() << std::endl;
     delete formE;
+    formE = NULL;
   }
   std::cout << "\n===================================================="
             << std::endl;
